@@ -1,16 +1,11 @@
 console.log("Hello World");
 
 
-function getRandomIntInclusive(min, max) {
-    // Create a random Integer min <= x <= max
-    const minCeiled = Math.ceil(min);
-    const maxFloored = Math.floor(max);
-    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); 
-}
+
 
 
 function getComputerChoice () {
-    switch (getRandomIntInclusive(1,3)) {
+    switch (Math.floor(Math.random()*3)) {
         case 1:
             return "rock";
         case 2:
@@ -67,8 +62,7 @@ function playGame (rounds) {
                 humanScore++;
             } else {computerScore++}
         }
-        alertMessage += `
-        New Score: Human ${humanScore} Computer ${computerScore}`
+        alertMessage += `\nNew Score: Human ${humanScore} Computer ${computerScore}`
         alert(alertMessage);
 
 
