@@ -12,17 +12,6 @@ function getComputerChoice () {
     }
 }
 
-function getHumanChoice () {
-    let choice = prompt('Enter "rock", "paper" or "scissor"').toLocaleLowerCase();
-    let testSet = new Set(["rock", "paper", "scissor"]);
-    if (testSet.has(choice)) {
-        return choice;
-    } else {
-        alert("wrong Input")
-        return getHumanChoice();
-    }
-}
-
 function playRound (humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         return "draw";
@@ -77,56 +66,4 @@ function processClick (id) {
         alert("Human won the Game!")
         location.reload();
     }
-        
-
-        
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function playGame (rounds) {
-    let humanScore = 0;
-    let computerScore = 0;
-    
-    for (counter = 1; counter <= rounds; counter++) {
-        let result = playRound(getHumanChoice(),getComputerChoice())
-        let alertMessage = "";
-        if (result === "draw") {
-            alertMessage += "It's a draw"
-        } else {
-            alertMessage += `${result} won the Round!`
-            if (result === "human") {
-                humanScore++;
-            } else {computerScore++}
-        }
-        alertMessage += `\nNew Score: Human ${humanScore} Computer ${computerScore}`
-        alert(alertMessage);
-
-
-    }
-    if (humanScore>computerScore) {
-        alert("Human Won the game!")
-    } else if (humanScore = computerScore) {
-        alert("It's a Draw!")
-    } else {
-        alert("Computer won the game!")
-    }
-} 
-
-//playGame(5);
