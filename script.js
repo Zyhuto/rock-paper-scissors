@@ -5,7 +5,7 @@ console.log("Hello World");
 
 
 function getComputerChoice () {
-    switch (Math.floor(Math.random()*3)) {
+    switch (Math.floor(Math.random()*3+1)) {
         case 1:
             return "rock";
         case 2:
@@ -38,11 +38,11 @@ function playRound (humanChoice, computerChoice) {
     } else {
         switch (humanChoice) {
             case "rock":
-                return computerChoice = "paper" ? "computer" : "human";
+                return computerChoice == "paper" ? "computer" : "human";
             case "paper":
-                return computerChoice = "rock" ? "human" : "computer";
+                return computerChoice == "rock" ? "human" : "computer";
             case "scissor":
-                return computerChoice = "paper" ? "human" : "computer";
+                return computerChoice == "paper" ? "human" : "computer";
         }
     }
 }
